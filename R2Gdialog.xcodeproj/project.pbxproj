@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E80446C81C65C49100BA7438 /* False Color Coconut Trees iPhone 6 Wallpaper.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E80446C71C65C48C00BA7438 /* False Color Coconut Trees iPhone 6 Wallpaper.jpg */; };
+		E879F58F1C69D717001D4916 /* fontawesome-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E879F58E1C69D716001D4916 /* fontawesome-webfont.ttf */; };
+		E879F5921C69DD33001D4916 /* R2GDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = E879F5911C69DD33001D4916 /* R2GDialog.swift */; };
 		E8D519981C610F180093E720 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D519971C610F180093E720 /* AppDelegate.swift */; };
 		E8D5199A1C610F180093E720 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D519991C610F180093E720 /* ViewController.swift */; };
 		E8D5199D1C610F180093E720 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8D5199B1C610F180093E720 /* Main.storyboard */; };
@@ -14,6 +17,7 @@
 		E8D519A21C610F180093E720 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8D519A01C610F180093E720 /* LaunchScreen.storyboard */; };
 		E8D519AD1C610F180093E720 /* R2GdialogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D519AC1C610F180093E720 /* R2GdialogTests.swift */; };
 		E8D519B81C610F180093E720 /* R2GdialogUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D519B71C610F180093E720 /* R2GdialogUITests.swift */; };
+		E8D51A1E1C61CC740093E720 /* abstract_bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E8D51A051C61CC740093E720 /* abstract_bg.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +38,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E80446C71C65C48C00BA7438 /* False Color Coconut Trees iPhone 6 Wallpaper.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "False Color Coconut Trees iPhone 6 Wallpaper.jpg"; sourceTree = "<group>"; };
+		E879F58E1C69D716001D4916 /* fontawesome-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "fontawesome-webfont.ttf"; sourceTree = "<group>"; };
+		E879F5911C69DD33001D4916 /* R2GDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R2GDialog.swift; sourceTree = "<group>"; };
 		E8D519941C610F170093E720 /* R2Gdialog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = R2Gdialog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8D519971C610F180093E720 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E8D519991C610F180093E720 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +54,7 @@
 		E8D519B31C610F180093E720 /* R2GdialogUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = R2GdialogUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8D519B71C610F180093E720 /* R2GdialogUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R2GdialogUITests.swift; sourceTree = "<group>"; };
 		E8D519B91C610F180093E720 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E8D51A051C61CC740093E720 /* abstract_bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = abstract_bg.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +82,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E879F5901C69DD33001D4916 /* R2GDialogClass */ = {
+			isa = PBXGroup;
+			children = (
+				E879F5911C69DD33001D4916 /* R2GDialog.swift */,
+			);
+			path = R2GDialogClass;
+			sourceTree = "<group>";
+		};
 		E8D5198B1C610F170093E720 = {
 			isa = PBXGroup;
 			children = (
@@ -97,8 +113,10 @@
 		E8D519961C610F180093E720 /* R2Gdialog */ = {
 			isa = PBXGroup;
 			children = (
+				E8D519F91C61CC740093E720 /* Asset */,
 				E8D519971C610F180093E720 /* AppDelegate.swift */,
 				E8D519991C610F180093E720 /* ViewController.swift */,
+				E879F5901C69DD33001D4916 /* R2GDialogClass */,
 				E8D5199B1C610F180093E720 /* Main.storyboard */,
 				E8D5199E1C610F180093E720 /* Assets.xcassets */,
 				E8D519A01C610F180093E720 /* LaunchScreen.storyboard */,
@@ -123,6 +141,32 @@
 				E8D519B91C610F180093E720 /* Info.plist */,
 			);
 			path = R2GdialogUITests;
+			sourceTree = "<group>";
+		};
+		E8D519F91C61CC740093E720 /* Asset */ = {
+			isa = PBXGroup;
+			children = (
+				E8D519FA1C61CC740093E720 /* Fonts */,
+				E8D51A041C61CC740093E720 /* Images */,
+			);
+			path = Asset;
+			sourceTree = "<group>";
+		};
+		E8D519FA1C61CC740093E720 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				E879F58E1C69D716001D4916 /* fontawesome-webfont.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		E8D51A041C61CC740093E720 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				E80446C71C65C48C00BA7438 /* False Color Coconut Trees iPhone 6 Wallpaper.jpg */,
+				E8D51A051C61CC740093E720 /* abstract_bg.jpg */,
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,7 +273,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E80446C81C65C49100BA7438 /* False Color Coconut Trees iPhone 6 Wallpaper.jpg in Resources */,
 				E8D519A21C610F180093E720 /* LaunchScreen.storyboard in Resources */,
+				E8D51A1E1C61CC740093E720 /* abstract_bg.jpg in Resources */,
+				E879F58F1C69D717001D4916 /* fontawesome-webfont.ttf in Resources */,
 				E8D5199F1C610F180093E720 /* Assets.xcassets in Resources */,
 				E8D5199D1C610F180093E720 /* Main.storyboard in Resources */,
 			);
@@ -257,6 +304,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E8D5199A1C610F180093E720 /* ViewController.swift in Sources */,
+				E879F5921C69DD33001D4916 /* R2GDialog.swift in Sources */,
 				E8D519981C610F180093E720 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -482,6 +530,7 @@
 				E8D519BE1C610F180093E720 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E8D519BF1C610F180093E720 /* Build configuration list for PBXNativeTarget "R2GdialogTests" */ = {
 			isa = XCConfigurationList;
@@ -490,6 +539,7 @@
 				E8D519C11C610F180093E720 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E8D519C21C610F180093E720 /* Build configuration list for PBXNativeTarget "R2GdialogUITests" */ = {
 			isa = XCConfigurationList;
@@ -498,6 +548,7 @@
 				E8D519C41C610F180093E720 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

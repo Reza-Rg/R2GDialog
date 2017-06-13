@@ -11,8 +11,6 @@ import UIKit
 class ViewController: UIViewController {
 
     
-    var i = 0;
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -25,7 +23,7 @@ class ViewController: UIViewController {
     }
     
 
-    @IBAction func showDialog(sender: AnyObject) {
+    @IBAction func showDialog(_ sender: AnyObject) {
         
         func myCallback() {
             print ("called")
@@ -56,44 +54,44 @@ class ViewController: UIViewController {
     }
     
     
-    @IBAction func showSimpleDialog(sender: AnyObject) {
+    @IBAction func showSimpleDialog(_ sender: AnyObject) {
         R2GDialog().show(self, title: "Hello World!", message: "This is pretty simple dialog! try to move or fling it!", negativeButtonText: "OK")
         
     }
     
-    @IBAction func showTwoButtonDialog(sender: AnyObject) {
+    @IBAction func showTwoButtonDialog(_ sender: AnyObject) {
         let alertview = R2GDialog()
         
         alertview.show(
             self,
             title: "Rate our app!",
             message:"Please rate our app on the application store. We promise to update app every week with new features!"
-            ,option:  [keyTitleBackgrounColor : UIColor(red: 0.11, green: 0.61, blue: 0.45, alpha: 1.0), keyTitleTextColor: UIColor.whiteColor()]
+            ,option:  [keyTitleBackgrounColor : UIColor(red: 0.11, green: 0.61, blue: 0.45, alpha: 1.0), keyTitleTextColor: UIColor.white]
             ,negativeButtonText: "👎"
             ,positiveButtonText:  "👍"
         )
         
     }
     
-    @IBAction func showNoMessageDialog(sender: AnyObject) {
+    @IBAction func showNoMessageDialog(_ sender: AnyObject) {
         R2GDialog().show(self, title: "1800MYAPPLE", negativeButtonText: "Cancel", positiveButtonText: "Call")
     }
     
-    @IBAction func showCustomizedDialog(sender: AnyObject) {
+    @IBAction func showCustomizedDialog(_ sender: AnyObject) {
         let alertview = R2GDialog()
         
         let messageFont = UIFont(name: "fontawesome", size: 20)
         
         let options : Dictionary<String, AnyObject> = [
             keyTitleBackgrounColor : UIColor(red: 0.80, green: 0.16, blue: 0.20, alpha: 1.0),
-            keyTitleTextColor : UIColor.whiteColor(),
-            keyMessageBackgrounColor : UIColor.whiteColor(),
-            keyMessageTextColor : UIColor.blackColor(),
+            keyTitleTextColor : UIColor.white,
+            keyMessageBackgrounColor : UIColor.white,
+            keyMessageTextColor : UIColor.black,
             keyNegativeBackgrounColor : UIColor(red: 0.07, green: 0.33, blue: 0.53, alpha: 1.0),
             keyPositiveBackgrounColor : UIColor(red: 0.25, green: 0.60, blue: 1.00, alpha: 1.0),
-            keyNegativeTextColor: UIColor.whiteColor(),
-            keyPositiveTextColor: UIColor.whiteColor(),
-            keyAlertCornerRadius : 8,
+            keyNegativeTextColor: UIColor.white,
+            keyPositiveTextColor: UIColor.white,
+            keyAlertCornerRadius : 8 as AnyObject,
             keyButtonsFont : messageFont!,
             
         ]
@@ -110,7 +108,7 @@ class ViewController: UIViewController {
         
     }
     
-    @IBAction func showCustomizedDialogWithBlurBg(sender: AnyObject) {
+    @IBAction func showCustomizedDialogWithBlurBg(_ sender: AnyObject) {
         let alertview = R2GDialog()
         
         let messageFont = UIFont(name: "futura", size: 18)
@@ -119,15 +117,15 @@ class ViewController: UIViewController {
             keyTitleBackgrounColor : UIColor(red: 0.12, green: 0.12, blue: 0.12, alpha: 1.0),
             keyTitleTextColor : UIColor(red: 0.90, green: 0.63, blue: 0.22, alpha: 1.0),
             keyMessageBackgrounColor : UIColor(red: 0.21, green: 0.21, blue: 0.21, alpha: 1.0),
-            keyMessageTextColor : UIColor.whiteColor(),
+            keyMessageTextColor : UIColor.white,
             keyMessageFont : messageFont!,
             keyNegativeBackgrounColor : UIColor(red: 0.12, green: 0.12, blue: 0.12, alpha: 1.0),
             keyPositiveBackgrounColor : UIColor(red: 0.12, green: 0.12, blue: 0.12, alpha: 1.0),
             keyNegativeTextColor: UIColor(red: 0.74, green: 0.20, blue: 0.11, alpha: 1.0),
             keyPositiveTextColor: UIColor(red: 0.35, green: 0.35, blue: 0.35, alpha: 1.0),
             keyDividerColor : UIColor(red: 0.90, green: 0.63, blue: 0.22, alpha: 1.0),
-            keyAlertCornerRadius : 0,
-            keyBackgroundBlur : "Dark",
+            keyAlertCornerRadius : 0 as AnyObject,
+            keyBackgroundBlur : "Dark" as AnyObject,
             
         ]
         
@@ -143,7 +141,7 @@ class ViewController: UIViewController {
         
     }
     
-    @IBAction func showDialogWithEventHandler(sender: AnyObject) {
+    @IBAction func showDialogWithEventHandler(_ sender: AnyObject) {
         
         
         func flingCallback() {
@@ -157,18 +155,18 @@ class ViewController: UIViewController {
         
         let options : Dictionary<String, AnyObject> = [
             keyTitleBackgrounColor : UIColor(red: 0.94, green: 0.11, blue: 0.44, alpha: 1.0),
-            keyTitleTextColor : UIColor.whiteColor(),
-            keyAlertFontName : "avenir",
+            keyTitleTextColor : UIColor.white,
+            keyAlertFontName : "avenir" as AnyObject,
             keyTitleFont : titleFont!,
             keyMessageBackgrounColor : UIColor(red: 0.94, green: 0.11, blue: 0.44, alpha: 1.0),
-            keyMessageTextColor : UIColor.whiteColor(),
+            keyMessageTextColor : UIColor.white,
             keyNegativeBackgrounColor : UIColor(red: 0.78, green: 0.10, blue: 0.36, alpha: 1.0),
             keyPositiveBackgrounColor : UIColor(red: 0.78, green: 0.10, blue: 0.36, alpha: 1.0),
             keyNegativeTextColor: UIColor(red: 0.90, green: 0.90, blue: 0.90, alpha: 1.0),
             keyPositiveTextColor: UIColor(red: 0.90, green: 0.90, blue: 0.90, alpha: 1.0),
-            keyDividerStroke: 0,
-            keyAlertCornerRadius : 0,
-            keyBackgroundBlur : "Light",
+            keyDividerStroke: 0 as AnyObject,
+            keyAlertCornerRadius : 0 as AnyObject,
+            keyBackgroundBlur : "Light" as AnyObject,
             
         ]
         
@@ -182,10 +180,10 @@ class ViewController: UIViewController {
             ,onNegativeClick:{
                 //Do whatever you want!
                 print("You selected no")}
+            ,onFling : flingCallback
             ,onDismisis:{
                 //Do whatever you want!
                 print("Dialog was dismissed")}
-            ,onFling : flingCallback
         )
         
         
@@ -196,8 +194,7 @@ class ViewController: UIViewController {
         
         alertview.onPositiveClick { () -> Void in
             //Do whatever you want!
-            self.i++
-            print("Positive was tapped \(self.i)")
+            print("Positive was tapped")
         }
         
         

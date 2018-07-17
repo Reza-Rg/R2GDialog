@@ -10,6 +10,9 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet var tableView: UITableView!
+    
+    let dialogNames = ["Simple Dialog","Two Button Dialog", "No Message Dialog", "Customized Dialog", "Custom Dialog With Blur", "Dialog With Event Handler"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +24,51 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @objc func tableView(_ tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
+        return dialogNames.count;
+    }
+    
+
+    
+    
+    @objc func tableView(_ tableView: UITableView!, cellForRowAtIndexPath indexPath: IndexPath!) -> UITableViewCell! {
+        
+        let  cell = tableView.dequeueReusableCell(withIdentifier: "CustomCell") as!  CustomCell
+        cell.dialogName.text = dialogNames[indexPath.row]
+
+        return cell
+    }
+    
+    @objc func tableView(_ tableView: UITableView!, didSelectRowAtIndexPath indexPath: IndexPath!) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        switch indexPath.row {
+        case 0:
+            showSimpleDialog()
+        case 1:
+            showTwoButtonDialog()
+        case 2:
+            showNoMessageDialog()
+        case 3:
+            showCustomizedDialog()
+        case 4:
+            showCustomizedDialogWithBlurBg()
+        case 5:
+            showDialogWithEventHandler()
+        default:
+            showSimpleDialog()
+        }
+
+    }
+    
+    @objc func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.separatorInset = UIEdgeInsets.zero
+        cell.layoutMargins = UIEdgeInsets.zero
+        tableView.separatorInset = UIEdgeInsets.zero
+        tableView.layoutMargins = UIEdgeInsets.zero
+    }
+    
     
 
     @IBAction func showDialog(_ sender: AnyObject) {
@@ -54,12 +102,12 @@ class ViewController: UIViewController {
     }
     
     
-    @IBAction func showSimpleDialog(_ sender: AnyObject) {
+    func showSimpleDialog() {
         R2GDialog().show(self, title: "Hello World!", message: "This is pretty simple dialog! try to move or fling it!", negativeButtonText: "OK")
         
     }
     
-    @IBAction func showTwoButtonDialog(_ sender: AnyObject) {
+    func showTwoButtonDialog() {
         let alertview = R2GDialog()
         
         alertview.show(
@@ -73,11 +121,11 @@ class ViewController: UIViewController {
         
     }
     
-    @IBAction func showNoMessageDialog(_ sender: AnyObject) {
+    func showNoMessageDialog() {
         R2GDialog().show(self, title: "1800MYAPPLE", negativeButtonText: "Cancel", positiveButtonText: "Call")
     }
     
-    @IBAction func showCustomizedDialog(_ sender: AnyObject) {
+    func showCustomizedDialog() {
         let alertview = R2GDialog()
         
         let messageFont = UIFont(name: "fontawesome", size: 20)
@@ -108,7 +156,7 @@ class ViewController: UIViewController {
         
     }
     
-    @IBAction func showCustomizedDialogWithBlurBg(_ sender: AnyObject) {
+    func showCustomizedDialogWithBlurBg() {
         let alertview = R2GDialog()
         
         let messageFont = UIFont(name: "futura", size: 18)
@@ -141,8 +189,7 @@ class ViewController: UIViewController {
         
     }
     
-    @IBAction func showDialogWithEventHandler(_ sender: AnyObject) {
-        
+    func showDialogWithEventHandler() {
         
         func flingCallback() {
             print ("Dialog was flinged!")
@@ -195,17 +242,7 @@ class ViewController: UIViewController {
         alertview.onPositiveClick { () -> Void in
             //Do whatever you want!
             print("Positive was tapped")
-        }
-        
-        
+        }   
     }
-    
-    
-    
-    
-    
-    
-    
-    
 }
 

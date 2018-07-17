@@ -51,7 +51,7 @@ class R2GDialog: UIViewController, UIGestureRecognizerDelegate {
     
     var isShowing = false
     
-    fileprivate dynamic var alertView : UIView!
+    @objc fileprivate dynamic var alertView : UIView!
     
     fileprivate let alertWidth : CGFloat = 270
     
@@ -361,7 +361,7 @@ class R2GDialog: UIViewController, UIGestureRecognizerDelegate {
         negativeButton.setBg(negativeBackgrounColor)
         negativeButton.titleLabel!.font = buttonsFont
         negativeButton.frame = CGRect(x: 0, y: alertHeight - buttonHeight, width: alertWidth, height: buttonHeight)
-        negativeButton.addTarget(self, action: Selector("negativeTapped"), for: UIControlEvents.touchUpInside)
+        negativeButton.addTarget(self, action: #selector(R2GDialog.negativeTapped), for: UIControlEvents.touchUpInside)
         alertView.addSubview(negativeButton)
         
         //Positive Button
@@ -373,7 +373,7 @@ class R2GDialog: UIViewController, UIGestureRecognizerDelegate {
             positiveButton.setBg(positiveBackgrounColor)
             positiveButton.titleLabel!.font = buttonsFont
             negativeButton.frame = CGRect(x: alertWidth / 2, y: alertHeight - buttonHeight, width: alertWidth / 2, height: buttonHeight)
-            positiveButton.addTarget(self, action: Selector("positiveTapped"), for: UIControlEvents.touchUpInside)
+            positiveButton.addTarget(self, action: #selector(R2GDialog.positiveTapped), for: UIControlEvents.touchUpInside)
             alertView.addSubview(positiveButton)
             
             //Divider
@@ -412,12 +412,12 @@ class R2GDialog: UIViewController, UIGestureRecognizerDelegate {
         alertView.addObserver(self, forKeyPath: "center", options: NSKeyValueObservingOptions.new , context: nil)
         
         //Outside tap gesture recognizer
-        let tap = UITapGestureRecognizer(target: self, action: "tapped:")
+        let tap = UITapGestureRecognizer(target: self, action: #selector(R2GDialog.tapped(_:)))
         view.addGestureRecognizer(tap)
         tap.delegate = self
         
         //Pan dialog gesture recognizer
-        let pan = UIPanGestureRecognizer(target: self, action: "panned:")
+        let pan = UIPanGestureRecognizer(target: self, action: #selector(R2GDialog.panned(_:)))
         alertView.addGestureRecognizer(pan)
         
         isShowing = true;
@@ -425,7 +425,7 @@ class R2GDialog: UIViewController, UIGestureRecognizerDelegate {
     }
     
     
-    internal func panned(_ pan: UIPanGestureRecognizer){
+    @objc internal func panned(_ pan: UIPanGestureRecognizer){
         let panLocationInView = pan.location(in: view)
         let panLocationInAlertView = pan.location(in: alertView)
         
@@ -467,7 +467,7 @@ class R2GDialog: UIViewController, UIGestureRecognizerDelegate {
         
     }
     
-    func tapped (_ pan: UIPanGestureRecognizer){
+    @objc func tapped (_ pan: UIPanGestureRecognizer){
         closeType = .touchOutside
         removeAlert()
     }
@@ -501,14 +501,14 @@ class R2GDialog: UIViewController, UIGestureRecognizerDelegate {
         self.touchOutsideAction = action
     }
     
-    func positiveTapped(){
+    @objc func positiveTapped(){
         animator.removeAllBehaviors()
         gravity.magnitude = 3.5
         animator.addBehavior(gravity)
         closeType = .positive
     }
     
-    func negativeTapped(){
+    @objc func negativeTapped(){
         animator.removeAllBehaviors()
         gravity.magnitude = 3.5
         animator.addBehavior(gravity)
@@ -523,8 +523,8 @@ func getStringHeight(_ mytext: String, font: UIFont, width: CGFloat)->CGFloat {
     let size = CGSize(width: width,height: CGFloat.greatestFiniteMagnitude)
     let paragraphStyle = NSMutableParagraphStyle()
     paragraphStyle.lineBreakMode = .byWordWrapping;
-    let attributes = [NSFontAttributeName:font,
-        NSParagraphStyleAttributeName:paragraphStyle.copy()]
+    let attributes = [NSAttributedStringKey.font:font,
+        NSAttributedStringKey.paragraphStyle:paragraphStyle.copy()]
     
     let text = mytext as NSString
     let rect = text.boundingRect(with: size, options:.usesLineFragmentOrigin, attributes: attributes, context:nil)
